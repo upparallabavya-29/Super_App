@@ -52,14 +52,17 @@ export function useMovies() {
           ...mock,
           Plot: 'A riveting story that has captivated audiences worldwide with its masterful storytelling.',
           Director: 'Famous Director',
+          Writer: 'Famous Writer',
           Actors: 'Actor One, Actor Two, Actor Three',
           Runtime: '142 min',
           Genre: 'Drama, Thriller',
           imdbRating: '9.3',
+          imdbVotes: '120,450',
           Language: 'English',
           Country: 'USA',
           Awards: 'Won 7 Oscars',
           Rated: 'R',
+          Released: '01 Jan 2024',
         });
       }
       return;

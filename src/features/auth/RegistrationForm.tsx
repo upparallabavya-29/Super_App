@@ -19,7 +19,7 @@ const registrationSchema = z.object({
     .min(1, 'Field is required')
     .regex(/^\+?[1-9]\d{9,14}$/, 'Invalid mobile number'),
   shareData: z.literal(true, {
-    errorMap: () => ({ message: 'Check this box if you want to proceed' }),
+    message: 'Check this box if you want to proceed',
   }),
 });
 
@@ -38,7 +38,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 260, damping: 20 },
+    transition: { type: 'spring' as const, stiffness: 260, damping: 20 },
   },
 };
 
