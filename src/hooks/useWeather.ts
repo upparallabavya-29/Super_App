@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef } from 'react';
 import { useWeatherStore } from '@/store/weatherSlice';
-import { getWeatherByCity, getWeatherByCoords } from '@/services/weather.service';
+import { getWeatherByCity, getWeatherByCoords, getMockWeather } from '@/services/weather.service';
 
 const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
@@ -12,10 +12,16 @@ export function useWeather() {
 
   const fetchWeather = useCallback(async (cityName: string) => {
     if (!process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY) {
-      setError('API key not configured. Add NEXT_PUBLIC_OPENWEATHER_API_KEY to .env.local');
+      // Mock weather fallback
+      setStatus('loading');
+      setError(null);
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      const mockData = getMockWeather(cityName || 'Mumbai');
+      setData(mockData);
       return;
     }
     setStatus('loading');
+    setError(null);
     try {
       const weatherData = await getWeatherByCity(cityName);
       setData(weatherData);
@@ -30,9 +36,18 @@ export function useWeather() {
       return;
     }
     setStatus('loading');
+    setError(null);
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         try {
+          if (!process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY) {
+            // Geolocation mock fallback
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            const mockData = getMockWeather('Paris');
+            setData(mockData);
+            setCity('Paris');
+            return;
+          }
           const weatherData = await getWeatherByCoords(pos.coords.latitude, pos.coords.longitude);
           setData(weatherData);
           setCity(weatherData.city);
