@@ -159,12 +159,10 @@ export function MovieModal({ movie, isLoading, onClose }: MovieModalProps) {
                     {hasPoster ? (
                       <>
                         {/* Blurred BG */}
-                        <Image
+                        <img
                           src={movie.Poster}
                           alt=""
-                          fill
-                          className="object-cover blur-md scale-110 opacity-40"
-                          sizes="384px"
+                          className="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-40"
                           aria-hidden="true"
                         />
                         {/* Sharp poster */}
@@ -174,13 +172,10 @@ export function MovieModal({ movie, isLoading, onClose }: MovieModalProps) {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 0.15, type: 'spring', stiffness: 260, damping: 22 }}
                         >
-                          <Image
+                          <img
                             src={movie.Poster}
                             alt={`Poster for ${movie.Title}`}
-                            fill
-                            className="object-cover"
-                            sizes="336px"
-                            priority
+                            className="absolute inset-0 w-full h-full object-cover"
                           />
                         </motion.div>
                       </>

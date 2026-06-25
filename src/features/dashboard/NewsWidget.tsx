@@ -160,12 +160,10 @@ export function NewsWidget() {
                   className="relative w-44 h-32 rounded-xl overflow-hidden"
                 >
                   {currentArticle.image ? (
-                    <Image
+                    <img
                       src={currentArticle.image}
                       alt={currentArticle.title}
-                      fill
-                      className="object-cover"
-                      sizes="176px"
+                      className="absolute inset-0 w-full h-full object-cover"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                   ) : (

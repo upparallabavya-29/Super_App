@@ -59,12 +59,10 @@ export function MovieCard({ movie, onClick, index = 0 }: MovieCardProps) {
 
           {/* Poster image */}
           {hasPoster ? (
-            <Image
+            <img
               src={movie.Poster}
               alt={`Poster for ${movie.Title}`}
-              fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-              className={`object-cover transition-all duration-700 group-hover:scale-110 ${
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
                 imageLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               onLoad={() => setImageLoaded(true)}
