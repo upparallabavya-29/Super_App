@@ -75,17 +75,17 @@ export async function searchMoviesByCategories(searchTerms: string[]): Promise<M
 // Mock data for development
 export function getMockMovies(): Movie[] {
   return [
-    { imdbID: 'tt0111161', Title: 'The Shawshank Redemption', Year: '1994', Poster: 'https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0068646', Title: 'The Godfather', Year: '1972', Poster: 'https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0468569', Title: 'The Dark Knight', Year: '2008', Poster: 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0110912', Title: 'Pulp Fiction', Year: '1994', Poster: 'https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0137523', Title: 'Fight Club', Year: '1999', Poster: 'https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0167260', Title: 'The Lord of the Rings: The Return of the King', Year: '2003', Poster: 'https://m.media-amazon.com/images/M/MV5BNzA5ZDJhZWMtODU5NS00NjczLWEyZDYtNGVhZGU4NjNhNmMxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt1375666', Title: 'Inception', Year: '2010', Poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0816692', Title: 'Interstellar', Year: '2014', Poster: 'https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFiZWZiZjQzNTY5XkEyXkFqcGc@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0120737', Title: 'The Lord of the Rings: The Fellowship of the Ring', Year: '2001', Poster: 'https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00NTM4LTlhOTctYjBiMjBiZGI4ZGRiXkEyXkFqcGc@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0109830', Title: 'Forrest Gump', Year: '1994', Poster: 'https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0133093', Title: 'The Matrix', Year: '1999', Poster: 'https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVlLTM5YTUtZGMyZmE5N2QyNzU2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg', Type: 'movie' },
-    { imdbID: 'tt0114369', Title: 'Se7en', Year: '1995', Poster: 'https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMy00OTk4LTg3NWUtNjZmZTRlZjVkZWY2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg', Type: 'movie' },
+    { imdbID: 'tt0111161', Title: 'The Shawshank Redemption', Year: '1994', Poster: 'https://image.tmdb.org/t/p/w500/9cqNMLxJAPxebLrK36P96Kz2H4R.jpg', Type: 'movie' },
+    { imdbID: 'tt0068646', Title: 'The Godfather', Year: '1972', Poster: 'https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7ae3OhD1H09930fM.jpg', Type: 'movie' },
+    { imdbID: 'tt0468569', Title: 'The Dark Knight', Year: '2008', Poster: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg', Type: 'movie' },
+    { imdbID: 'tt0110912', Title: 'Pulp Fiction', Year: '1994', Poster: 'https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXA.jpg', Type: 'movie' },
+    { imdbID: 'tt0137523', Title: 'Fight Club', Year: '1999', Poster: 'https://image.tmdb.org/t/p/w500/pB8BM7pdSpqUqTh8y0yVf3Y7Gj9.jpg', Type: 'movie' },
+    { imdbID: 'tt0167260', Title: 'The Lord of the Rings: The Return of the King', Year: '2003', Poster: 'https://image.tmdb.org/t/p/w500/rCzpDGLbOoDk0L178w72PzK5a7.jpg', Type: 'movie' },
+    { imdbID: 'tt1375666', Title: 'Inception', Year: '2010', Poster: 'https://image.tmdb.org/t/p/w500/oYuLEt3zNNK452H5D3JkF6d7h4.jpg', Type: 'movie' },
+    { imdbID: 'tt0816692', Title: 'Interstellar', Year: '2014', Poster: 'https://image.tmdb.org/t/p/w500/gEU2QpI6EItf48nmYKVw9M6Ld1J.jpg', Type: 'movie' },
+    { imdbID: 'tt0120737', Title: 'The Lord of the Rings: The Fellowship of the Ring', Year: '2001', Poster: 'https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMMIb52s4s548V42.jpg', Type: 'movie' },
+    { imdbID: 'tt0109830', Title: 'Forrest Gump', Year: '1994', Poster: 'https://image.tmdb.org/t/p/w500/yE5d3BUhQnJjJ3Lw6W6s6nB2H0B.jpg', Type: 'movie' },
+    { imdbID: 'tt0133093', Title: 'The Matrix', Year: '1999', Poster: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXQi5H.jpg', Type: 'movie' },
+    { imdbID: 'tt0114369', Title: 'Se7en', Year: '1995', Poster: 'https://image.tmdb.org/t/p/w500/191nKfP0ehp3uIvWqgPbFmI4lv9.jpg', Type: 'movie' },
   ];
 }

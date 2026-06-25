@@ -11,18 +11,19 @@ export function useWeather() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const fetchWeather = useCallback(async (cityName: string) => {
-    if (!process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY) {
-      // Mock weather fallback
-      setStatus('loading');
-      setError(null);
-      await new Promise((resolve) => setTimeout(resolve, 400));
-      const mockData = getMockWeather(cityName || 'Mumbai');
-      setData(mockData);
-      return;
-    }
+    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
+    const hasApiKey = apiKey && apiKey !== 'undefined' && apiKey !== 'null' && apiKey.trim() !== '';
+
     setStatus('loading');
     setError(null);
     try {
+      if (!hasApiKey) {
+        // Mock weather fallback
+        await new Promise((resolve) => setTimeout(resolve, 400));
+        const mockData = getMockWeather(cityName || 'Mumbai');
+        setData(mockData);
+        return;
+      }
       const weatherData = await getWeatherByCity(cityName);
       setData(weatherData);
     } catch (err) {
@@ -39,8 +40,11 @@ export function useWeather() {
     setError(null);
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
+        const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
+        const hasApiKey = apiKey && apiKey !== 'undefined' && apiKey !== 'null' && apiKey.trim() !== '';
+
         try {
-          if (!process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY) {
+          if (!hasApiKey) {
             // Geolocation mock fallback
             await new Promise((resolve) => setTimeout(resolve, 500));
             const mockData = getMockWeather('Paris');
